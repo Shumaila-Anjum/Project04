@@ -1,0 +1,17 @@
+name: Run other scripts on push
+
+on: push  # This runs on every push or commit
+
+jobs:
+  run-other_scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Lint
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Build Project
+        run: npm run build
